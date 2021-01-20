@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: customers
+    description: One record per customer
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: NULL when a customer has not yet placed an order.
+
+  - name: orders
+    description: Complete orders model including the amount associated with each order.
+    columns:
+      - name: order_id
+        description: Primary key for orders
+        tests:
+          - unique
+          - not_null
