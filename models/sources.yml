@@ -27,3 +27,23 @@ sources:
             tests:
               - accepted_values:
                   values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+  - name: stripe
+    description: Incoming stripe payment data.
+    database: raw
+    tables:
+
+      - name: payment
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+          - name: payment_method
+            tests:
+              - accepted_values:
+                  values: ['credit_card', 'bank_transfer', 'gift_card', 'coupon']
+          - name: status
+            tests:
+              - accepted_values:
+                  values: ['success', 'fail']
