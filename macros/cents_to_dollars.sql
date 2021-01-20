@@ -1,5 +1,5 @@
-{% macro cents_to_dollars(column_name, scale=2) %}
+{%- macro cents_to_dollars(column_name, scale=2) -%}
 
     ({{ column_name }} / 100)::numeric(16, {{ scale }})
     
-{% endmacro %}
+{%- endmacro -%}
