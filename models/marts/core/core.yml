@@ -16,7 +16,7 @@ models:
     description: Complete orders model including the amount associated with each order.
     tests:
       - dbt_utils.expression_is_true:
-          expression: "amount > 0"
+          expression: "amount >= 0"
     columns:
       - name: order_id
         description: Primary key for orders
