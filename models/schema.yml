@@ -44,9 +44,3 @@ models:
         tests:
           - unique
           - not_null
-      - name: payment_id
-        description: Foreign key for payments
-        tests:
-          - relationships:
-              to: ref('stg_payments')
-              field: payment_id
