@@ -64,3 +64,4 @@ left outer join {{ source('stripe', 'payment') }} payments
 on orders.id = payments.orderid
 
 where payments.status != 'fail'
+ No newline at end of file
