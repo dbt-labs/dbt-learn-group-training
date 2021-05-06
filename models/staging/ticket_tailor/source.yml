@@ -1,10 +1,10 @@
 sources:
-  - name:ticket_tailor
-    database:raw
-    loaded_at_field:_sdc_batched_at
+  - name: ticket_tailor
+    database: raw
+    loaded_at_field: _sdc_batched_at
     freshness:
-      error_after:{count:1, period:hour}
+      error_after: {count: 1, period: hour}
     tables:
-      - name:orders
-      - name:events
-      - name:issued_tickets
+      - name: orders
+      - name: events
+      - name: issued_tickets
