@@ -1,3 +1,5 @@
+version: 2
+
 sources:
   - name: ticket_tailor
     database: raw
