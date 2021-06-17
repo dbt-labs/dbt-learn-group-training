@@ -11,7 +11,9 @@ payments as (
 ),
 
 order_payments as (
+
     select
+
         order_id,
         sum(case when status = 'success' then amount end) as amount_usd
 
@@ -22,6 +24,7 @@ order_payments as (
 final as (
 
     select
+    
         orders.order_id,
         orders.customer_id,
         orders.order_date,
