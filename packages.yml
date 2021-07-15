@@ -1,5 +1,5 @@
 packages:
   - package: fishtown-analytics/dbt_utils
-    version: 0.6.4
+    version: 0.7.0
   - package: gitlabhq/snowflake_spend
     version: 1.2.0
