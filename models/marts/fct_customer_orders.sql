@@ -8,17 +8,17 @@ paid_orders as (
         p.payment_finalized_date,
         c.first_name as customer_first_name,
         c.last_name as customer_last_name
-    from raw.jaffle_shop.orders as orders
+    from {{ source('jaffle_shop', 'orders') }} as orders
     left join (
         select 
             orderid as order_id,
             max(created) as payment_finalized_date,
             sum(amount) / 100.0 as total_amount_paid
-        from raw.stripe.payment
+        from {{ source('stripe', 'payment') }} as payments
         where status <> 'fail'
         group by 1
     ) p on orders.id = p.order_id
-    left join raw.jaffle_shop.customers c on orders.user_id = c.id ),
+    left join {{ source('jaffle_shop', 'customers') }} as c on orders.user_id = c.id ),
 
 customer_orders as (
     select 
@@ -26,8 +26,8 @@ customer_orders as (
         , min(order_date) as first_order_date
         , max(order_date) as most_recent_order_date
         , count(orders.id) as number_of_orders
-    from raw.jaffle_shop.customers c 
-    left join raw.jaffle_shop.orders as orders on orders.user_id = c.id 
+    from {{ source('jaffle_shop', 'customers') }}  c 
+    left join {{ source('jaffle_shop', 'orders') }}  as orders on orders.user_id = c.id 
     group by 1
 )
 
