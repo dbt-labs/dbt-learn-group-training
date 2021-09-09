@@ -5,7 +5,6 @@
 name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
-require-dbt-version: [">=0.17.1", "<=0.19.0"]
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
