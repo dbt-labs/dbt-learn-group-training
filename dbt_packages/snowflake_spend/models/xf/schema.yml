@@ -1,0 +1,18 @@
+version: 2
+
+models:
+    - name: snowflake_warehouse_metering_xf
+      description: This is the transformed model for the Snowflake Warehouse Metering History table https://docs.snowflake.net/manuals/sql-reference/account-usage/warehouse_metering_history.html.
+      columns:
+      - name: warehouse_id
+      - name: warehouse_name
+      - name: start_time
+      - name: end_time
+      - name: credits_used
+      - name: usage_month
+        description: Uses the end date to define the month the usage occurred.
+      - name: usage_length
+        description: Determines the number of hours between the start and end times.
+      - name: credits_used
+      - name: dollars_spent
+        description: Calculates the dollar value based on the credits consumed.

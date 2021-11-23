@@ -1,0 +1,58 @@
+version: 2
+
+models:
+    - name: snowflake_amortized_rates
+      description: '{{ doc("snowflake_amortized_rates") }}'
+      columns:
+      - name: effective_start_date
+        tests:
+        - not_null
+      - name: effective_end_date
+      - name: rate
+        tests:
+        - not_null
+      - name: date_day
+        tests:
+        - not_null
+        - unique
+    - name: snowflake_query_history
+      description: '{{ doc("snowflake_query_history") }}'
+      columns:
+      - name: snowflake_query_id
+        tests:
+        - not_null
+        - unique
+      - name: database_id
+      - name: snowflake_session_id
+      - name: warehouse_id
+      - name: database_name
+      - name: query_text
+        tests:
+        - not_null
+      - name: snowflake_role_name
+        tests:
+        - not_null
+      - name: snowflake_user_name
+        tests:
+        - not_null
+      - name: query_result_rows_produced
+        description: 'The number of rows produced as a result of the query output. This is a good proxy of the vol of output'
+      - name: schema_name
+      - name: warehouse_name
+      - name: query_end_time
+        tests:
+        - not_null
+      - name: query_start_time
+        tests:
+        - not_null
+      - name: query_spillover_local
+      - name: query_spillover_remote
+      - name: query_bytes_scanned
+    - name: snowflake_warehouse_metering
+      description: '{{ doc("snowflake_warehouse_metering") }}'
+      columns:
+      - name: warehouse_id
+      - name: warehouse_name
+      - name: start_time
+      - name: end_time
+      - name: credits_used

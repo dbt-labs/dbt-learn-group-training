@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: snowflake
+    database: snowflake
+    schema: account_usage
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: query_history
+      - name: warehouse_metering_history
