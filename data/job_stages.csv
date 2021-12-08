@@ -1,0 +1,8 @@
+job_stage_id,job_stage_name,job_stage_index
+stage_id_1,Recruiter Screen,1
+stage_id_2,Phone Interview,2
+stage_id_3,Panel Round,3
+stage_id_4,Executive Interview,4
+stage_id_5,Final Call,5
+stage_id_123, Round Substage,
+stage_id_456, Round Substage,

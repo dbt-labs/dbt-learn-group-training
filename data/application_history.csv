@@ -1,0 +1,12 @@
+id,application_id,job_stage_id,status,created_at
+123,sydney,stage_id_1,accepted,2007-03-01T13:00:00Z
+456,sydney,stage_id_456,accepted,2007-03-01T15:01:00Z
+890,sydney,stage_id_456,accepted,2007-03-01T15:00:00Z
+789,sydney,stage_id_2,accepted,2007-03-03T12:00:00Z
+012,sydney,stage_id_4,accepted,2007-04-01T06:00:00Z
+224,sydney,stage_id_5,accepted,2007-04-05T12:00:00Z
+345,christine,stage_id_2,accepted,2007-03-01T13:00:00Z
+678,christine,stage_id_3,accepted,2007-03-01T15:00:00Z
+901,christine,stage_id_3,accepted,2007-03-01T16:00:00Z
+234,christine,stage_id_123,rejected,2007-03-12T08:00:00Z
+567,christine,stage_id_4,accepted,2007-03-23T13:00:00Z

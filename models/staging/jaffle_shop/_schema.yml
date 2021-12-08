@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: stg_jaffle_shop__customers
+      description: stages jaffle_shop data
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
