@@ -1,3 +1,7 @@
+with
+
+payments as (
+    
 select
     id as payment_id,
     orderid as order_id,
@@ -9,3 +13,7 @@ select
     created as created_at
 
 from raw.stripe.payment
+
+)
+
+select * from payments
