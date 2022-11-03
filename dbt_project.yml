@@ -6,6 +6,7 @@ name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
 
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
@@ -34,4 +35,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   jaffle_shop:
+    materialized: table
+    staging:
+      +materialized: view
+      +tags: ['stg']
     
