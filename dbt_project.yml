@@ -35,4 +35,4 @@ models:
   my_new_project:
       # Applies to all files under models/example/
       example:
-          materialized: view
+          materialized: table
