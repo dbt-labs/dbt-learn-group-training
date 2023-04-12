@@ -1,8 +1,6 @@
 with customers as (
 
-    select * from {{ ref('stg_customers') }}
-
-),
+    select * from {{ ref('stg_customers') }}),
 
 orders as (
 
@@ -10,21 +8,16 @@ orders as (
 
 ),
 
-order_amount as (
-    select * from {{ ref('orders') }}
-),
-
 customer_orders as (
 
     select
         customer_id,
 
-        min(orders.order_date) as first_order_date,
-        max(orders.order_date) as most_recent_order_date,
-        count(orders.order_id) as number_of_orders,
-        sum(order_amount.total_amount) as lifetime_value
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
 
-    from orders orders left join order_amount using(order_id)
+    from orders
 
     group by 1
 
@@ -39,8 +32,7 @@ final as (
         customers.last_name,
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
-        coalesce(customer_orders.number_of_orders, 0) as number_of_orders,
-        customer_orders.lifetime_value
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
 
     from customers
 
