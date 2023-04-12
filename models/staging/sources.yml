@@ -27,3 +27,11 @@ sources:
             tests:
               - accepted_values:
                   values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+  - name: stripe
+    description: A replica of the postgres database
+    database: raw
+    tables:
+      - name: payment
+        description: one payment per order 
+
