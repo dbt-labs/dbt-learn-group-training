@@ -1,5 +1,7 @@
 version: 2
 
+
+
 sources:
   - name: jaffle_shop
     description: A replica of the postgres database
