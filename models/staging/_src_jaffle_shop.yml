@@ -7,6 +7,11 @@ sources:
     tables:
       - name: customers
         identifier: customers
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
       - name: orders
         identifier: orders
         loaded_at_field: _etl_loaded_at
