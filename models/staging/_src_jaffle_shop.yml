@@ -2,10 +2,12 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: A replica of the postgres database
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
+        description: One record per customer
         identifier: customers
         columns:
           - name: id
@@ -13,6 +15,7 @@ sources:
               - not_null
               - unique
       - name: orders
+        description: One record per order
         identifier: orders
         loaded_at_field: _etl_loaded_at
         freshness:
