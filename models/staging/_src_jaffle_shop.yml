@@ -22,3 +22,14 @@ sources:
           error_after:
             count: 24
             period: hour
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: status
+            tests:
+              - accepted_values:
+                  values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+                  
