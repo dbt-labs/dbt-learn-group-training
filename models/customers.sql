@@ -54,8 +54,6 @@ final as (
 
 )
 
-<<<<<<< HEAD
+
 select * from final
-=======
-select * from final
->>>>>>> 9abc25bc6a5344daa29bc3a81399828a061ae2f7
+
