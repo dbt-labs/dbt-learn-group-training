@@ -1,5 +1,8 @@
 Welcome to your new dbt project!
 
+### Project manager
+Beth Hipple
+
 ### Using the starter project
 
 Try running the following commands:
