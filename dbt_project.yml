@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'coap_project'
+name: 'my_new_project'
 version: '1.0.0'
 config-version: 2
 
@@ -34,7 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  coap_project:
+  my_new_project:
     +materialized: table # makes sure that that 'materialized' is not interpretted as a folde
 
 
