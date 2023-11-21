@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: customers
+    description: One record per customer
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: One record per order
+    columns:
+      - name: status
+        description: "{{ doc('order_status')}}"
+        tests:
+          - accepted_values:
+              values:
+                - placed
+                - shipped
+                - completed
+                - returned
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
