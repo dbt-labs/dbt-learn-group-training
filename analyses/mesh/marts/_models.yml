@@ -1,4 +1,35 @@
+
 models:
   - name: fct_orders
-    description: Order data, one row per order
     access: public
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: order_id
+        data_type: varchar
+      - name: location_id
+        data_type: varchar
+      - name: customer_id
+        data_type: varchar
+      - name: order_total
+        data_type: number
+      - name: tax_paid
+        data_type: number
+      - name: ordered_at
+        data_type: timestamp_ntz
+      - name: customer_name
+        data_type: varchar
+      - name: location_name
+        data_type: varchar
+      - name: tax_rate
+        data_type: float
+      - name: location_opened_at
+        data_type: timestamp_ntz
+      - name: ordered_month
+        data_type: number
+      - name: ordered_day
+        data_type: number
+      - name: ordered_year
+        data_type: number
+    
