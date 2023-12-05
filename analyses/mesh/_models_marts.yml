@@ -1,6 +1,7 @@
 
 models:
   - name: dim_customers
+    group: finance
     access: public
     config:
       contract:
