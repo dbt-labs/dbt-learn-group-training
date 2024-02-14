@@ -2,11 +2,13 @@ with
 
 source as (
 
-    select * from raw.jaffle_shop.customers
+    select * from {{ source('jaffle_shop', 'customers') }}
+    
+    --raw.jaffle_shop.customers
 
 ),
 
-staged as (
+transformed as (
 
     select
         id as customer_id,
@@ -16,4 +18,4 @@ staged as (
 
 )
 
-select * from staged
+select * from transformed
