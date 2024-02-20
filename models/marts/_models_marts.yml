@@ -21,3 +21,9 @@ models:
         data_type: date
       - name: number_of_orders
         data_type: number
+
+groups: 
+  - name: finance
+    owner: 
+      name: Kyle Coapman
+      email: kcoapman@dbtlabs.com
