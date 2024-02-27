@@ -1,0 +1,10 @@
+groups:
+  - name: finance
+    owner:
+      name: Dan Horner
+      
+
+models:
+  - name: stg_stripe__payment
+    group: finance
+    access: public
