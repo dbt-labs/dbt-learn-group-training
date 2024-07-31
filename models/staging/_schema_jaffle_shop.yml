@@ -1,20 +1,20 @@
 version: 2
 
 models:
-  - name: customers
+  - name: stg_jaffle_shop__customers
     description: One record per customer
     columns:
       - name: customer_id
-        tests:
+        data_tests:
           - not_null
           - unique
 
-  - name: stg_orders
+  - name: stg_jaffle_shop__orders
     description: One record per order
     columns:
       - name: status
         description: "{{ doc('order_status')}}"
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - placed
@@ -22,7 +22,7 @@ models:
                 - completed
                 - returned
       - name: customer_id
-        tests:
+        data_tests:
           - relationships:
-              to: ref('stg_customers')
+              to: ref('stg_jaffle_shop__customers')
               field: customer_id
