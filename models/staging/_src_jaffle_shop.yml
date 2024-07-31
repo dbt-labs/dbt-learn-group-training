@@ -11,7 +11,7 @@ sources:
         identifier: customers
         columns:
           - name: id
-            tests:
+            data_tests:
               - not_null
               - unique
       - name: orders
