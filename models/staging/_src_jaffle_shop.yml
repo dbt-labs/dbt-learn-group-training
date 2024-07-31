@@ -9,7 +9,7 @@ sources:
         identifier: customers
         columns:
           - name: id
-            tests:
+            data_tests:
               - not_null
               - unique
       - name: orders
@@ -28,7 +28,7 @@ sources:
               - unique
               - not_null
           - name: status
-            tests:
+            data_tests:
               - accepted_values:
                   values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
 
