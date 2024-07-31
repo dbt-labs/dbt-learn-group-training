@@ -8,7 +8,7 @@ sources:
       - name: customers
         columns:
           - name: id
-            tests:
+            data_tests:
               - not_null
               - unique
       - name: orders
@@ -19,11 +19,11 @@ sources:
           error_after: {count: 24, period: hour}
         columns:
           - name: id
-            tests:
+            data_tests:
               - unique
               - not_null
           - name: status
             description: "{{ doc('order_status') }}"
-            tests:
+            data_tests:
               - accepted_values:
                   values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']

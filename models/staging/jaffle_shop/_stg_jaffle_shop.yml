@@ -6,7 +6,7 @@ models:
     columns:
       - name: customer_id
         description: Primary key
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -14,12 +14,12 @@ models:
     description: One record per order
     columns:
       - name: order_id
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: status
         description: "{{ doc('order_status') }}"
-        tests:
+        data_tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
       - name: amount

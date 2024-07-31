@@ -8,14 +8,14 @@ sources:
       - name: payment
         columns:
           - name: id
-            tests:
+            data_tests:
               - not_null
               - unique
           - name: paymentmethod
-            tests:
+            data_tests:
               - accepted_values:
                   values: ['credit_card', 'bank_transfer', 'gift_card', 'coupon']
           - name: status
-            tests:
+            data_tests:
               - accepted_values:
                   values: ['success', 'fail']
