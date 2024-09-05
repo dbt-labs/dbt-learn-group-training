@@ -1,0 +1,6 @@
+sources:
+  - name: snowplow
+    database: raw
+    schema: snowplow
+    tables:
+      - name: events
